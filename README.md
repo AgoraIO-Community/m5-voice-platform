@@ -3,6 +3,8 @@
 A reusable M5StickS3 voice client backed by Agora Conversational AI Platform
 v3 management and a Next.js control plane.
 
+![PocketFullOfAgents landing page introducing the M5StickS3 voice client](.github/images/landing-page.png)
+
 The repository combines two upstream foundations:
 
 - The Agora Platform v3 Next.js quickstart remains the root web application
@@ -123,10 +125,15 @@ Never install project packages into the system Python and never use a bare
 
 ## Stick operator dashboard
 
+![Agent library with browser testing and controls for managing agents on the Stick](.github/images/agent-library.png)
+
 Production defaults to one operator with a server-side `OPERATOR_ACCESS_KEY`.
 Sign in and select **New agent** to enter its name, instructions, and first
 spoken message. Choose a managed OpenAI text model and TTS voice. The editor
 saves the ARES → OpenAI → OpenAI TTS cascade in the configured Agora project.
+
+![Create agent form with instructions, first spoken message, model, and voice](.github/images/create-agent.png)
+
 Use **Push to device** and **Remove from device** to manage the Stick’s library. The server saves its ordered agent IDs in a private Vercel Blob. The Stick syncs over HTTPS with its provisioned device key. Select a voice agent on the Stick, then hold the front button to speak. Release it to listen. Settings show the device ID, volume, and simulated account `hermes`.
 
 The operator login and logout endpoints accept POST requests at
