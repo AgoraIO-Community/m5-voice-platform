@@ -1,0 +1,81 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+# *.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# MacOS desktop metadata files
+.DS_Store
+
+# Build files
+build/
+cmake-build-*/
+managed_components/
+sdkconfig
+sdkconfig.old
+/esp-idf/
+/esp-idf-v6.0.3.*
+
+# PlatformIO
+.pio/
+
+# VSCode
+.vscode/
+.cache/
+
+# Python virtual environment
+.venv/
+
+# Debug / Release files
+Debug/
+debug/
+Release/
+release/
+out/
+bin/
+obj/
+
+*.code-workspace
+
+/main/voice_config_local.h
+/.agora/
+/Jingyi-MiniMax.rtf
+/components/
+/simulator/build/
+/service/**/server/.env
+/service/**/venv/
+/service/**/.agora/
+/service/**/node_modules/
+/service/**/.next/
+/skills/**/__pycache__/
+**/__pycache__/
+/captures/
+/tests/results/
+/main/voice_config_local*.h

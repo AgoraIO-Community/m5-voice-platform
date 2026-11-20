@@ -1,0 +1,6 @@
+firmware/
+.pnpm-store/
+.env*
+.agora/
+*.log
+docs/

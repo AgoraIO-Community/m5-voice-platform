@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.16)
+foreach(dependency M5Unified M5GFX lvgl)
+    if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/components/${dependency}/CMakeLists.txt")
+        message(FATAL_ERROR "Missing ${dependency}. Run: python3 ${CMAKE_CURRENT_SOURCE_DIR}/tools/bootstrap_dependencies.py")
+    endif()
+endforeach()
+set(M5UNIFIED_ARDUINO_COMPONENT OFF)
+set(M5GFX_ARDUINO_COMPONENT OFF)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(m5stack_agora)
+idf_component_get_property(lvgl_lib lvgl COMPONENT_LIB)
+target_include_directories(${lvgl_lib} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/main")
+target_compile_definitions(${lvgl_lib} PUBLIC LV_CONF_INCLUDE_SIMPLE=1 LV_KCONFIG_IGNORE=1)
+# Leave M5GFX_BOARD unset so M5Unified/M5GFX can probe the connected board at
+# runtime. M5Unified's fallback is only used if probing genuinely fails.
